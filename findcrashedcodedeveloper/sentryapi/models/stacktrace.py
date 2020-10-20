@@ -15,7 +15,7 @@ class SentryStackTraceLine:
             absolute filepath of crashed file
         crashed_line_number : int
             line number of crashed line.
-            line number starts from 0.
+            line number starts from 1.
         crashed_line_code : int
             code at the crashed line
         crashed_line_context : list of dict
@@ -41,7 +41,7 @@ class SentryStackTraceLine:
         -------
         int
             line number of crashed line.
-            line number starts from 0.
+            line number starts from 1.
         """
         return self._crashed_line_number
 
@@ -61,7 +61,7 @@ class SentryStackTraceLine:
         Yields
         ------
         line_number : int
-            line number start from 0.
+            line number start from 1.
         code : str
             code at that line
         """

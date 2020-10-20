@@ -9,9 +9,9 @@ def test_get_file_content(github_api, dummy_repository):
     )
 
     assert file.get_number_of_lines() == 2
-    assert file.get_line_code(0) == 'Please ignore this file.'
-    assert file.get_line_code(0) == 'This file is used in tests.'
-    assert file.get_line_range_code(0, 1) == [
+    assert file.get_line_code(1) == 'Please ignore this file.', '1st line'
+    assert file.get_line_code(2) == 'This file is used in tests.', '2nd line'
+    assert file.get_line_range_code(1, 2) == [
         'Please ignore this file.',
         'This file is used in tests.'
     ]

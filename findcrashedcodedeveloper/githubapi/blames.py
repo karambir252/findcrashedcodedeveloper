@@ -66,11 +66,11 @@ class GithubBlamesAPI:
         )
         result = self._client.get(query)
 
-        ref_data = result['data']['repository']['ref']
-        if ref_data is None:
+        blame_ranges = result['data']['repository']['ref']['target']['blame']['ranges']
+
+        if not blame_ranges:
             raise FileNotFoundError(filepath)
 
-        blame_ranges = ref_data['target']['blame']['ranges']
         blame_data = []
         for blame in blame_ranges:
             blame_data.append({

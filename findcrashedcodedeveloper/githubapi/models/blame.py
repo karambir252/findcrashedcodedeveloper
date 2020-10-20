@@ -28,7 +28,7 @@ class GithubBlame:
         Parameters
         ----------
         line_number : int
-            Line number in the file, numbers start from 0.
+            Line number in the file, numbers start from 1.
 
         Returns
         -------

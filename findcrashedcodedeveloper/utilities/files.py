@@ -14,7 +14,7 @@ def find_line_author_and_code_info(github_api, repository, filepath, line_number
         unix style path of file inside the repository.
         example:- findthedeveloper/utilities/files.py
     line_number : int
-        Number of line, number starts from 0
+        Number of line, number starts from 1
     branch : str, optional
         name of branch (default is 'master')
     extra_lines : int, optional

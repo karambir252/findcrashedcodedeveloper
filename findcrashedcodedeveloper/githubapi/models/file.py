@@ -19,7 +19,7 @@ class FileContent:
         Parameters
         ----------
         line_number : str
-            Number of line in file, numbering start from 0.
+            Number of line in file, numbering start from 1.
 
         Returns
         -------
@@ -31,7 +31,7 @@ class FileContent:
         InvalidLineNumberException
             If line number not exists in file
         """
-        if line_number < 0 or line_number >= len(self._lines):
+        if line_number <= 0 or line_number > len(self._lines):
             raise InvalidLineNumberException(line_number)
         return self._lines[line_number-1]
 
@@ -50,16 +50,16 @@ class FileContent:
         list
             list of str of code
         """
-        if start_line < 0 or start_line >= len(self._lines):
+        if start_line <= 0 or start_line > len(self._lines):
             raise InvalidLineNumberException(
                 start_line, line_label='start_line'
             )
-        elif end_line < 0 or end_line >= len(self._lines):
+        elif end_line <= 0 or end_line > len(self._lines):
             raise InvalidLineNumberException(end_line, line_label='end_line')
         elif end_line < start_line:
             raise InvalidLineNumberException(end_line, line_label='end_line')
 
-        return list(self._lines[start_line: end_line+1])
+        return list(self._lines[start_line-1: end_line])
 
     def get_number_of_lines(self):
         """Get number of lines in the file"""
