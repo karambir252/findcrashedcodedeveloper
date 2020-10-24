@@ -27,7 +27,7 @@ setup(
     packages=find_packages(exclude=("tests", "dummycrash")),
     include_package_data=True,
     install_requires=[
-        "importlib_resources", "graphqlclient"
+        "importlib_resources", "graphqlclient", "requests"
     ],
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
