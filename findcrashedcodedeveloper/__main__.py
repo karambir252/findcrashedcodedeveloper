@@ -1,4 +1,7 @@
 """Get the author info of a line"""
+# Support Python 2
+from __future__ import print_function
+
 import argparse
 
 from .githubapi import GithubAPI
@@ -10,7 +13,7 @@ from .utilities.codedeveloper import get_crashed_code_author
 from .utilities.files import find_line_author_and_code_info
 from .viewer.author import print_github_user
 from .viewer.stack_trace import print_sentry_stack_trace
-from findcrashedcodedeveloper import GITHUB_API_SERVER_URL, SENTRY_URL
+from .constants import GITHUB_API_SERVER_URL, SENTRY_URL
 
 
 def _check_sentry_project(value):

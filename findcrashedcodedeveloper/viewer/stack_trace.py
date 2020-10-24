@@ -1,3 +1,7 @@
+# Support Python 2
+from __future__ import print_function
+
+
 def print_sentry_stack_trace(stack_trace, heading='Stack Trace:'):
     """Print Sentry stack trace information
 
